@@ -218,13 +218,28 @@ print(tfidf.toarray()) #.toarray() 是将结果转化为稀疏矩阵矩阵的表
 
 ![1555160838432](img/1555160838432.png)
 
+## 4. 使用第二步生成的特征矩阵，利用互信息进行特征筛选。
 
+特征选择
 
-\4. 使用第二步生成的特征矩阵，利用互信息进行特征筛选。
+“无关特征”（irrelevant feature）。比如，通过空气的湿度，环境的温度，风力和当地人的男女比例来预测明天会不会下雨，其中男女比例就是典型的无关特征。
 
+要减少的另一类特征叫做“多余特征”（redundant feature）
 
+**过滤（Filter）**
 
+**包裹（Warpper）**
 
+**嵌入法（Embedding）**
+
+sklearn.metrics.mutual_info_score：
+
+![1555168722832](img/1555168722832.png)
+
+```python
+from sklearn import metrics as mr
+mr.mutual_info_score(data[0],data[1])
+```
 
 
 
